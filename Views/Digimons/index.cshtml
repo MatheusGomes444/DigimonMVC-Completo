@@ -1,0 +1,19 @@
+@model IEnumerable<DigimonMvc.Models.ClasseDigimon>
+
+
+
+    @*<title>Lista de Digimons</title>*@
+
+    <h1>Lista de Digimons</h1>
+
+    <ul>
+        @foreach (var ClasseDigimon in Model)
+        {
+            <li>
+                <h2>@ClasseDigimon.Nome</h2>
+                <p><strong>Tipo:</strong> @ClasseDigimon.Tipo</p>
+                <p><strong>Nível:</strong> @ClasseDigimon.Nivel</p>
+                <img src="@Url.Content("~/Content/Images/" + ClasseDigimon.ImagemUrl)" alt="@ClasseDigimon.Nome" />
+            </li>
+        }
+    </ul>
